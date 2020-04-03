@@ -10,8 +10,8 @@ class Nav extends Component {
         {this.props.currentUser
           ?
           <>
-          <button onClick={this.props.toggleShowCreate}>Log out</button>
-          <h2>{this.props.currentUser.username}</h2>
+          <button onClick={this.props.logout}>Log out</button>
+          <h2>{this.props.currentUser[0].username}</h2>
           </>
           :
           <>

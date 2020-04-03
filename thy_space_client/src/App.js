@@ -15,6 +15,7 @@ class App extends Component {
     }
     this.getUsers = this.getUsers.bind(this)
     this.login = this.login.bind(this)
+    this.logout = this.logout.bind(this)
     this.createUser = this.createUser.bind(this)
     this.toggleShowCreate = this.toggleShowCreate.bind(this)
   }
@@ -26,6 +27,12 @@ class App extends Component {
   toggleShowCreate() {
     this.setState({
       showCreate: !this.state.showCreate
+    })
+  }
+
+  logout() {
+    this.setState({
+      currentUser: false
     })
   }
 
@@ -70,7 +77,7 @@ class App extends Component {
         {this.state.showCreate
         ?<CreateUser toggleShowCreate={this.toggleShowCreate} createUser={this.createUser}/>
         :<>
-        <Nav toggleShowCreate={this.toggleShowCreate} currentUser={this.state.currentUser} login={this.login}/>
+        <Nav toggleShowCreate={this.toggleShowCreate} currentUser={this.state.currentUser} login={this.login} logout={this.logout}/>
         <Main />
         </>
         }
