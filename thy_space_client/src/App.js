@@ -9,9 +9,9 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      currentUser: {},
+      currentUser: false,
       users: [],
-      showCreate: false
+      showCreate: false,
     }
     this.getUsers = this.getUsers.bind(this)
     this.login = this.login.bind(this)
@@ -70,7 +70,7 @@ class App extends Component {
         {this.state.showCreate
         ?<CreateUser toggleShowCreate={this.toggleShowCreate} createUser={this.createUser}/>
         :<>
-        <Nav toggleShowCreate={this.toggleShowCreate} />
+        <Nav toggleShowCreate={this.toggleShowCreate} currentUser={this.state.currentUser} login={this.login}/>
         <Main />
         </>
         }
