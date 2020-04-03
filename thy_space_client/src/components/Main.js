@@ -4,7 +4,7 @@ class Main extends Component {
   constructor(props){
     super(props)
     this.state = {
-      props
+      posts: []
     }
   }
 
@@ -16,7 +16,9 @@ class Main extends Component {
           <button>Make ye a post</button>
         </div>
         <div>
-          {}
+          {this.state.posts.map(post => (
+            <Post post={post} />
+          ))}
         </div>
       </div>
     )
