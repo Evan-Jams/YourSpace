@@ -4,7 +4,10 @@ class Form extends Component {
   constructor(props){
     super(props)
     this.state = {
-      body: ''
+      body: '',
+      date: '',
+      likes: 0,
+      user_id: this.props.currentUser[0].id
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -23,6 +26,7 @@ class Form extends Component {
     return(
       <form onSubmit={this.handleSubmit}>
         <textarea placeholder="What is on ye old mind?" id="body" value={this.state.body} onChange={this.handleChange}/>
+        <input type='text' placeholder="What day was thine written?" id="date" value={this.state.date} onChange={this.handleChange}/>
         <input type="submit" value="submit" />
       </form>
     )

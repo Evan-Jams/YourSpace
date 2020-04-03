@@ -78,7 +78,7 @@ class App extends Component {
         ?<CreateUser toggleShowCreate={this.toggleShowCreate} createUser={this.createUser}/>
         :<>
         <Nav toggleShowCreate={this.toggleShowCreate} currentUser={this.state.currentUser} login={this.login} logout={this.logout}/>
-        <Main />
+        <Main currentUser={this.state.currentUser} users={this.state.users}/>
         </>
         }
       </>
