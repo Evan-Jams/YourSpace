@@ -56,7 +56,7 @@ class App extends Component {
         'Content-Type': 'application/json'
       }
     })
-    let data = response.json()
+    let data = await response.json()
     console.log(data)
     this.setState(prevState => {
       return({ users: [...prevState.users, data]})
@@ -68,7 +68,7 @@ class App extends Component {
     return(
       <>
         {this.state.showCreate
-        ?<CreateUser toggleShowCreate={this.toggleShowCreate}/>
+        ?<CreateUser toggleShowCreate={this.toggleShowCreate} createUser={this.createUser}/>
         :<>
         <Nav toggleShowCreate={this.toggleShowCreate} />
         <Main />
