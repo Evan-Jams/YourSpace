@@ -20,6 +20,7 @@ class Main extends Component {
   }
 
   async createPost(formData) {
+
     let response = await fetch (`http://localhost:3000/posts`, {
       body: JSON.stringify(formData),
       method: 'POST',
