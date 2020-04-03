@@ -6,6 +6,9 @@ class CreateUser extends Component {
       <div>
         <h1>CreateUser</h1>
         <button onClick={this.props.toggleShowCreate}>Toggle</button>
+        <form>
+          <input></input>
+        </form>
       </div>
     )
   }
